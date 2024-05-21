@@ -291,9 +291,9 @@ public class App {
 
 		/* Paciente */
 		// borrar
-		System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
-		DaoHibernatePaciente.borrar(listaPaciente.get(listaPaciente.size()-1));
+		//System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
+		//DaoHibernatePaciente.borrar(listaPaciente.get(listaPaciente.size()-1));
 		// leer
-		System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
+		//System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
 	}
 }
