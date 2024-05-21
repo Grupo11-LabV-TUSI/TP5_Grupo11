@@ -3,7 +3,6 @@ package UTNFRGP.TP4_Borrador;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import dao.DaoHibernateEspecialidad;
@@ -295,5 +294,12 @@ public class App {
 		//DaoHibernatePaciente.borrar(listaPaciente.get(listaPaciente.size()-1));
 		// leer
 		//System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
+		
+		/** #TK-2  Listar medicos ordenados por matricula*/
+		System.err.println("Listar medicos ordenados por matricula");
+		List<Medico> lm = DaoHibernateMedico.leerOrdenadosMatricula();
+		for (Medico medico : lm) {
+			System.out.println(medico);			
+		}
 	}
 }

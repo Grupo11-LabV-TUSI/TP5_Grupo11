@@ -82,6 +82,18 @@ public class DaoHibernateMedico {
 		
 		return lista;
 	}
+	// listar ordendos por matricula
+	public static List<Medico> leerOrdenadosMatricula(){
+		ConfigHibernate ch = new ConfigHibernate();
+		Session session = ch.abrirConexion();
+		
+		session.beginTransaction();
+		
+		Query query = session.getNamedQuery("findAllMedicosOrderByMatricula");
+		List<Medico> lista = query.list();
+		
+		return lista; 
+	}
 	// existe
 	public static boolean existe(Long id) {
 		boolean existe = false;
