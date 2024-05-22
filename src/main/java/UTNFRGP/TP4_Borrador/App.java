@@ -29,10 +29,29 @@ import excepciones.PK_Usuario_Repetida;
 
 public class App {
 	public static void main(String[] args) {
-		/** CARGAR */
+		
+		DaoHibernateMedico aux = new DaoHibernateMedico();
+		
+		Medico medico = aux.leer(1234);
+		
+		System.out.println(medico.getFecha_nacimiento());
+		
+		
+		aux.traerPorFecha(1234);
+		
+		
+		
+		
+		
+		
+		/*
+		
+		
+		
+		// CARGAR //
 		// Turno turno = new Turno(medico, paciente, LocalDate.of(2028, 5, 14),
 		// LocalTime.of(18, 0), "Bien", EstadoTurno.PENDIENTE);
-		/* Paciente */
+		// Paciente //
 		List<Paciente> listaPaciente = new ArrayList<Paciente>();
 		listaPaciente.add(new Paciente(399547, "Aldo", "Ramirez", "aldoRamirez@gmail.com", "16546545",
 				LocalDate.of(2000, 1, 2), "Calle 1", "Benavidez", "BSAS"));
@@ -78,7 +97,7 @@ public class App {
 		// listar
 		System.out.println(DaoHibernatePaciente.leerTodos());
 
-		/* Especialidad */
+		// Especialidad //
 		List<Especialidad> listaEspecialidad = new ArrayList<Especialidad>();
 		listaEspecialidad.add(new Especialidad("Cardiología"));
 		listaEspecialidad.add(new Especialidad("Psiquiatría"));
@@ -119,7 +138,7 @@ public class App {
 		// listar
 		System.out.println(DaoHibernateEspecialidad.leerTodos());
 
-		/* Usuario */ /** PROBANDO BIDIRECCIONES USUARIO MEDICO*/
+		// Usuario // // PROBANDO BIDIRECCIONES USUARIO MEDICO//
 		List<Usuario> listaUsuario = new ArrayList<Usuario>();
 		listaUsuario.add(new Usuario("JGarcia", "JG123"));
 		listaUsuario.add(new Usuario("JPepe", "JP456"));
@@ -160,31 +179,31 @@ public class App {
 		// listar
 		System.out.println(DaoHibernateUsuario.leerTodos());
 
-		/* Medico */
+		// Medico //
 		List<Medico> listaMedico = new ArrayList<Medico>();
-		listaMedico.add(new Medico(10000000000L, "Jose", "Garcia", "emailM1@email.com", "telefono M1",
+		listaMedico.add(new Medico(1234, "Jose", "Garcia", "emailM1@email.com", "telefono M1",
 				LocalDate.of(1961, 1, 1), listaUsuario.get(0), listaEspecialidad.get(0)));
-		listaMedico.add(new Medico(20000000000L, "Juan", "Pepe", "emailM2@email.com", "telefono M2",
+		listaMedico.add(new Medico(200, "Juan", "Pepe", "emailM2@email.com", "telefono M2",
 				LocalDate.of(1962, 2, 2), listaUsuario.get(1), listaEspecialidad.get(1)));
-		listaMedico.add(new Medico(30000000000L, "Juan", "Perez", "emailM3@email.com", "telefono M3",
+		listaMedico.add(new Medico(300, "Juan", "Perez", "emailM3@email.com", "telefono M3",
 				LocalDate.of(1963, 3, 3), listaUsuario.get(2), listaEspecialidad.get(2)));
-		listaMedico.add(new Medico(40000000000L, "Juan", "Ramirez", "emailM4@email.com", "telefono M4",
+		listaMedico.add(new Medico(400, "Juan", "Ramirez", "emailM4@email.com", "telefono M4",
 				LocalDate.of(1964, 4, 4), listaUsuario.get(3), listaEspecialidad.get(3)));
-		listaMedico.add(new Medico(50000000000L, "Juan", "Lopez", "emailM5@email.com", "telefono M5",
+		listaMedico.add(new Medico(500, "Juan", "Lopez", "emailM5@email.com", "telefono M5",
 				LocalDate.of(1965, 5, 5), listaUsuario.get(4), listaEspecialidad.get(4)));
-		listaMedico.add(new Medico(60000000000L, "Juan", "Martinez", "emailM6@email.com", "telefono M6",
+		listaMedico.add(new Medico(600, "Juan", "Martinez", "emailM6@email.com", "telefono M6",
 				LocalDate.of(1966, 6, 6), listaUsuario.get(5), listaEspecialidad.get(5)));
-		listaMedico.add(new Medico(70000000000L, "Juan", "Gomez", "emailM7@email.com", "telefono M7",
+		listaMedico.add(new Medico(700, "Juan", "Gomez", "emailM7@email.com", "telefono M7",
 				LocalDate.of(1967, 7, 7), listaUsuario.get(6), listaEspecialidad.get(6)));
-		listaMedico.add(new Medico(80000000000L, "Juan", "Sanchez", "emailM8@email.com", "telefono M8",
+		listaMedico.add(new Medico(800, "Juan", "Sanchez", "emailM8@email.com", "telefono M8",
 				LocalDate.of(1968, 8, 8), listaUsuario.get(7), listaEspecialidad.get(7)));
-		listaMedico.add(new Medico(90000000000L, "Juan", "Fernandez", "emailM9@email.com", "telefono M9",
+		listaMedico.add(new Medico(900, "Juan", "Fernandez", "emailM9@email.com", "telefono M9",
 				LocalDate.of(1969, 9, 9), listaUsuario.get(8), listaEspecialidad.get(8)));
-		listaMedico.add(new Medico(11000000000L, "Juan", "Rodriguez", "emailM10@email.com", "telefono M10",
+		listaMedico.add(new Medico(110, "Juan", "Rodriguez", "emailM10@email.com", "telefono M10",
 				LocalDate.of(1970, 10, 10), listaUsuario.get(9), listaEspecialidad.get(9)));
-		listaMedico.add(new Medico(111000000000L, "Elena", "Ranco", "emailM11@email.com", "telefono M11",
+		listaMedico.add(new Medico(111, "Elena", "Ranco", "emailM11@email.com", "telefono M11",
 				LocalDate.of(1961, 11, 11), listaUsuario.get(10), listaEspecialidad.get(10)));
-		listaMedico.add(new Medico(112000000000L, "Juana", "Shakira", "emailM12@email.com", "telefono M12",
+		listaMedico.add(new Medico(112, "Juana", "Shakira", "emailM12@email.com", "telefono M12",
 				LocalDate.of(1962, 2, 2), listaUsuario.get(11), listaEspecialidad.get(11)));
 		// cargar
 		for (Medico medico : listaMedico) {
@@ -212,13 +231,13 @@ public class App {
 		// listo
 		System.out.println(DaoHibernateMedico.leerTodos());
 
-		/* Turno */
+		// Turno //
 		List<Turno> listaTurno = new ArrayList<Turno>();
-		listaTurno.add(new Turno(listaMedico.get(0), listaPaciente.get(0), LocalDate.of(2024, 12, 12),
+		listaTurno.add(new Turno(listaMedico.get(0), listaPaciente.get(0), LocalDate.of(2024, 01, 01),
 				LocalTime.of(15, 30), "Reuma", EstadoTurno.AUSENTE));
 		listaTurno.add(new Turno(listaMedico.get(1), listaPaciente.get(1), LocalDate.of(2024, 6, 1),
 				LocalTime.of(20, 30), "Tiene piojos", EstadoTurno.PENDIENTE));
-		listaTurno.add(new Turno(listaMedico.get(2), listaPaciente.get(3), LocalDate.of(2022, 3, 21),
+		listaTurno.add(new Turno(listaMedico.get(0), listaPaciente.get(3), LocalDate.of(2025, 01, 01),
 				LocalTime.of(10, 45), "Fiebre", EstadoTurno.AUSENTE));
 		listaTurno.add(new Turno(listaMedico.get(3), listaPaciente.get(3), LocalDate.of(2023, 7, 15),
 				LocalTime.of(8, 0), "Dolor de cabeza", EstadoTurno.PRESENTE));
@@ -263,43 +282,48 @@ public class App {
 		// listar
 		System.out.println(DaoHibernateTurno.leerTodos());
 
-		/** BORRAR */
-		/* Turno */
+		// BORRAR //
+		// Turno //
 		// borrar
 		//DaoHibernateTurno.borrar(listaTurno.get(listaTurno.size()-1));
 		// leer
 		//System.out.println(DaoHibernateTurno.leer(listaTurno.get(listaTurno.size()-1).getId()));
 
-		/* Medico */
+		// Medico //
 		// borrar
 		//DaoHibernateMedico.borrar(listaMedico.get(listaMedico.size()-1));
 		// leer
 		//System.out.println(DaoHibernateMedico.leer(listaMedico.get(listaMedico.size()-1).getMatricula()));
 
-		/* Usuario */
+		// Usuario //
 		// borrar
 		//DaoHibernateUsuario.borrar(listaUsuario.get(listaUsuario.size()-1));
 		// leer
 		//System.out.println(DaoHibernateUsuario.leer(listaUsuario.get(listaUsuario.size()-1).getId()));
 
-		/* Especialidad */
+		// Especialidad //
 		// borrar
 		//DaoHibernateEspecialidad.borrar(listaEspecialidad.get(listaEspecialidad.size()-1));
 		// leer
 		//System.out.println(DaoHibernateEspecialidad.leer(listaEspecialidad.get(listaEspecialidad.size()-1).getId()));
 
-		/* Paciente */
+		// Paciente //
 		// borrar
 		//System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
 		//DaoHibernatePaciente.borrar(listaPaciente.get(listaPaciente.size()-1));
 		// leer
 		//System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
 		
-		/** #TK-2  Listar medicos ordenados por matricula*/
+		// #TK-2  Listar medicos ordenados por matricula//
 		System.err.println("Listar medicos ordenados por matricula");
 		List<Medico> lm = DaoHibernateMedico.leerOrdenadosMatricula();
 		for (Medico medico : lm) {
 			System.out.println(medico);			
+			
+			
+			
 		}
+		
+		 */
 	}
 }

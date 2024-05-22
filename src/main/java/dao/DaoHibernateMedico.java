@@ -1,5 +1,6 @@
 package dao;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -28,7 +29,7 @@ public class DaoHibernateMedico {
 		ch.cerrarSession();
 	}
 	// leer
-	public static Medico leer(Long matricula) {
+	public static Medico leer(int matricula) {
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
 
@@ -95,7 +96,7 @@ public class DaoHibernateMedico {
 		return lista; 
 	}
 	// existe
-	public static boolean existe(Long id) {
+	public static boolean existe(int id) {
 		boolean existe = false;
 		
 		if(leer(id) != null) {
@@ -104,5 +105,22 @@ public class DaoHibernateMedico {
 		
 		return existe;
 	}
+	
+	public static void traerPorFecha(int legajo) {
+		ConfigHibernate ch = new ConfigHibernate();
+		Session session = ch.abrirConexion();
+		Query consulta = session.createQuery("select from Medico p where p.matricula = 1234" );
+		
+		
+		List <Medico> listaTurnos = consulta.list();
+		
+		for(Medico turnoFecha : listaTurnos)
+		{
+			System.out.println(turnoFecha.toString());
+		}
+	}
+	
+	
+	
 
 }

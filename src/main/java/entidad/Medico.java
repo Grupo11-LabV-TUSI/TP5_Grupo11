@@ -39,7 +39,7 @@ public class Medico implements Serializable{
 
 	@Id
 	@Column(name="matricula")
-	private Long matricula;
+	private int matricula;
 	
 	@Column(name="nombre")
 	private String nombre;
@@ -67,7 +67,7 @@ public class Medico implements Serializable{
 	// Constructor vacio para hibernate
 	public Medico() {}
 
-	public Medico(Long matricula, String nombre, String apellido, String email, String telefono,
+	public Medico(int matricula, String nombre, String apellido, String email, String telefono,
 			LocalDate fecha_nacimiento, Usuario usuario, Especialidad especialidad) {
 		this.matricula = matricula;
 		this.nombre = nombre;
@@ -80,11 +80,11 @@ public class Medico implements Serializable{
 	}
 
 	// Getters y Setters
-	public Long getMatricula() {
+	public int getMatricula() {
 		return matricula;
 	}
 
-	public void setMatricula(Long matricula) {
+	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
 
