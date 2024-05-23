@@ -29,25 +29,8 @@ import excepciones.PK_Usuario_Repetida;
 
 public class App {
 	public static void main(String[] args) {
-		
-		DaoHibernateMedico aux = new DaoHibernateMedico();
-		
-		Medico medico = aux.leer(1234);
-		
-		System.out.println(medico.getFecha_nacimiento());
-		
-		
-		aux.traerPorFecha(1234);
-		
-		
-		
-		
-		
-		
-		/*
-		
-		
-		
+	
+	
 		// CARGAR //
 		// Turno turno = new Turno(medico, paciente, LocalDate.of(2028, 5, 14),
 		// LocalTime.of(18, 0), "Bien", EstadoTurno.PENDIENTE);
@@ -71,6 +54,7 @@ public class App {
 				LocalDate.of(1988, 11, 5), "Calle 8", "Santa Fe", "Santa Fe"));
 		listaPaciente.add(new Paciente(9645654, "Pedro", "Rodríguez", "pedroRodriguez@gmail.com", "36985214",
 				LocalDate.of(2002, 2, 28), "Avenida 9", "Neuquén", "Neuquén"));
+		
 		// cargar
 		for (Paciente paciente : listaPaciente) {
 			try {
@@ -80,7 +64,7 @@ public class App {
 				System.out.println(DaoHibernatePaciente.leer(paciente.getDni()));
 				// actualizar
 				paciente.setFecha_nacimiento(paciente.getFecha_nacimiento().plusDays(1));
-				DaoHibernatePaciente.actualizar(paciente);
+			DaoHibernatePaciente.actualizar(paciente);
 				// leer
 				System.out.println(DaoHibernatePaciente.leer(paciente.getDni()));
 			} catch (PK_Paciente_Repetida e) {
@@ -94,6 +78,7 @@ public class App {
 				System.out.println(DaoHibernatePaciente.leer(paciente.getDni()));
 			}
 		}
+		
 		// listar
 		System.out.println(DaoHibernatePaciente.leerTodos());
 
@@ -233,12 +218,12 @@ public class App {
 
 		// Turno //
 		List<Turno> listaTurno = new ArrayList<Turno>();
-		listaTurno.add(new Turno(listaMedico.get(0), listaPaciente.get(0), LocalDate.of(2024, 01, 01),
+		listaTurno.add(new Turno(listaMedico.get(0), listaPaciente.get(0), LocalDate.of(2025, 1, 1),
 				LocalTime.of(15, 30), "Reuma", EstadoTurno.AUSENTE));
-		listaTurno.add(new Turno(listaMedico.get(1), listaPaciente.get(1), LocalDate.of(2024, 6, 1),
+		listaTurno.add(new Turno(listaMedico.get(0), listaPaciente.get(1), LocalDate.of(2026, 1, 1),
 				LocalTime.of(20, 30), "Tiene piojos", EstadoTurno.PENDIENTE));
-		listaTurno.add(new Turno(listaMedico.get(0), listaPaciente.get(3), LocalDate.of(2025, 01, 01),
-				LocalTime.of(10, 45), "Fiebre", EstadoTurno.AUSENTE));
+		listaTurno.add(new Turno(listaMedico.get(0), listaPaciente.get(3), LocalDate.of(2025, 1, 1),
+				LocalTime.of(10, 45), "Fiebre", EstadoTurno.PENDIENTE));
 		listaTurno.add(new Turno(listaMedico.get(3), listaPaciente.get(3), LocalDate.of(2023, 7, 15),
 				LocalTime.of(8, 0), "Dolor de cabeza", EstadoTurno.PRESENTE));
 		listaTurno.add(new Turno(listaMedico.get(4), listaPaciente.get(4), LocalDate.of(2023, 9, 30),
@@ -264,8 +249,8 @@ public class App {
 				// leer
 				System.out.println(DaoHibernateTurno.leer(listaTurno.get(i).getId()));
 				// actualizar
-				listaTurno.get(i).setFecha(listaTurno.get(i).getFecha().plusYears(1));
-				DaoHibernateTurno.actualizar(listaTurno.get(i));
+			//	listaTurno.get(i).setFecha(listaTurno.get(i).getFecha().plusYears(1));
+			//	DaoHibernateTurno.actualizar(listaTurno.get(i));
 				// leer
 				System.out.println(DaoHibernateTurno.leer(listaTurno.get(i).getId()));
 			} catch (PK_Turno_Repetida e) {
@@ -320,10 +305,15 @@ public class App {
 		for (Medico medico : lm) {
 			System.out.println(medico);			
 			
-			
-			
 		}
+		 
 		
-		 */
+		// TK-2 Listar turnos del medico cuyo legajo es 1234 y que tengan fecha 01/01/2025
+		
+		DaoHibernateMedico aux = new DaoHibernateMedico();
+		aux.traerPorFecha(1234, LocalDate.of(2025, 1, 1));
+	
+		
+		 
 	}
 }

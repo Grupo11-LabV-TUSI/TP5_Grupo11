@@ -50,8 +50,13 @@ public class Turno  implements Serializable{
 	@JoinColumn(name="paciente_id")
 	private Paciente paciente;
 	
+	
+	
 	@Column(name="fecha")
 	private LocalDate fecha;
+	
+	
+	
 	
 	@Column(name="hora")
 	private LocalTime hora;

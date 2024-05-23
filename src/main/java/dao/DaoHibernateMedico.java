@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import entidad.Medico;
+import entidad.Turno;
 import excepciones.PK_Medico_NoExiste;
 import excepciones.PK_Medico_Repetida;
 
@@ -106,17 +107,22 @@ public class DaoHibernateMedico {
 		return existe;
 	}
 	
-	public static void traerPorFecha(int legajo) {
+	public static void traerPorFecha(int numLegajo, LocalDate fecha) {
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
-		Query consulta = session.createQuery("select from Medico p where p.matricula = 1234" );
 		
-		
-		List <Medico> listaTurnos = consulta.list();
-		
-		for(Medico turnoFecha : listaTurnos)
+		Query query = session.createQuery("SELECT tur, med FROM Turno tur INNER JOIN tur.medico med WHERE med.matricula = :legajo AND tur.fecha = :fechaTur");
+		query.setParameter("legajo", numLegajo);
+		query.setParameter("fechaTur", fecha);
+		List<Object[]> listaTurnos =(List<Object[]>)query.list();
+	
+		for(Object[] turnoFecha : listaTurnos)
 		{
-			System.out.println(turnoFecha.toString());
+			Turno turno = (Turno)turnoFecha[0];
+			Medico medico = (Medico)turnoFecha[1];
+			
+				System.out.println(" Matricula / Legajo del medico : " + medico.getMatricula() + " Fecha del turno: " + turno.getFecha().toString()+ " Estado del turno: " + turno.getEstado());
+				
 		}
 	}
 	

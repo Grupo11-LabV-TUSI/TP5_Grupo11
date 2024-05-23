@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: gastona
-Build-Jdk: 1.8.0_301
+Built-By: anima
+Build-Jdk: 1.8.0_381
 Created-By: Maven Integration for Eclipse
 
