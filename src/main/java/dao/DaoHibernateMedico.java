@@ -125,7 +125,21 @@ public class DaoHibernateMedico {
 				
 		}
 	}
-	
+	public static void ReadAll_AlgunasColumnas() {
+		ConfigHibernate ch = new ConfigHibernate();
+		Session session = ch.abrirConexion();
+		
+		List<Object[]> listaDocente = (List<Object[]>) session.createQuery("SELECT m.matricula,m.nombre,m.apellido FROM Medico m ORDER BY m.matricula ASC").list();
+		//System.out.println(listaDocente);
+		
+		for(Object[] obj: listaDocente) {
+			Integer matri =(Integer) obj[0];
+			String nom =(String) obj[1];
+			String ape =(String) obj[2];
+			System.out.println(matri.toString() + " " + nom +  " " + ape);
+		}
+		ch.cerrarSession();
+	}
 	
 	
 
