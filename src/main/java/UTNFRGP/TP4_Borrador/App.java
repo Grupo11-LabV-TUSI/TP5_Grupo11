@@ -30,6 +30,7 @@ import excepciones.PK_Usuario_Repetida;
 public class App {
 	public static void main(String[] args) {
 	
+		/*
 	
 		// CARGAR //
 		// Turno turno = new Turno(medico, paciente, LocalDate.of(2028, 5, 14),
@@ -299,26 +300,11 @@ public class App {
 		// leer
 		//System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
 		DaoHibernateMedico aux = new DaoHibernateMedico();
-		// #TK-2  Listar medicos ordenados por matricula//
-		System.err.println("Listar medicos ordenados por matricula");
-		List<Medico> lm = DaoHibernateMedico.leerOrdenadosMatricula();
-		for (Medico medico : lm) {
-			System.out.println(medico);			
-			
-		}
+		 */
+		
 		 
 		
-		// #TK-2  generar consulta HQL definirla como notación en clase para mostrar todos los médicos ordenados 
-		//según su legajo de menor a mayor. Los campos que se deben mostrar son legajo, nombre y apellido. 
-		//Realizarlo como se explica en el video HQL SELECT SOME COLUMNS.//
-		//aux.ReadAll_AlgunasColumnas();
 		
-		
-		// TK-2 Listar turnos del medico cuyo legajo es 1234 y que tengan fecha 01/01/2025
-			 
-		
-		//aux.traerPorFecha(1234, LocalDate.of(2025, 1, 1));
-	
 		
 		 
 	}

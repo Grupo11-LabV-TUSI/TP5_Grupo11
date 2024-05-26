@@ -142,5 +142,18 @@ public class DaoHibernateMedico {
 	}
 	
 	
+	
+	public static void listarPorMatriculaDESC() {
+		
+		
+				System.err.println("Listar medicos ordenados por matricula");
+				List<Medico> lm = DaoHibernateMedico.leerOrdenadosMatricula();
+				for (Medico medico : lm) {
+					System.out.println(medico);			
+					
+				}
+
+	}
+	
 
 }
