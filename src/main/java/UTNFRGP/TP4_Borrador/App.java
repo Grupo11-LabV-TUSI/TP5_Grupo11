@@ -30,7 +30,7 @@ import excepciones.PK_Usuario_Repetida;
 public class App {
 	public static void main(String[] args) {
 	
-		/*
+		
 	
 		// CARGAR //
 		// Turno turno = new Turno(medico, paciente, LocalDate.of(2028, 5, 14),
@@ -299,9 +299,8 @@ public class App {
 		//DaoHibernatePaciente.borrar(listaPaciente.get(listaPaciente.size()-1));
 		// leer
 		//System.out.println(DaoHibernatePaciente.leer(listaPaciente.get(listaPaciente.size()-1).getDni()));
-		DaoHibernateMedico aux = new DaoHibernateMedico();
-		 */
-		
+		//DaoHibernateMedico aux = new DaoHibernateMedico();
+		 
 		 
 		
 		
