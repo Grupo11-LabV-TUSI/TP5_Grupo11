@@ -34,7 +34,10 @@ public class App2 {
 	 aux.traerPorFecha(1234, LocalDate.of(2025, 1, 1));
 	
 	
-	
+	 //#TK-8 generar método que use la consulta defina en la tk7, en el dao 
+	 //correspondiente a Medico y aplicarlo en main donde el campo que se debe mostrar es legajo. 
+	 //Realizarlo como se explica en el video HQL SELECT ONE COLUMN.
+     aux.listarTodosLegajos();
 	
 	
 	
