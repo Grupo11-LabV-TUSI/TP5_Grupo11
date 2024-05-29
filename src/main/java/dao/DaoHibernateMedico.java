@@ -172,5 +172,22 @@ public class DaoHibernateMedico {
 
 		ch.cerrarSession();
 	}
+	
+	public static void listarTodosLegajos() {
+        ConfigHibernate ch = new ConfigHibernate();
+        Session session = ch.abrirConexion();
+
+        session.beginTransaction();
+
+        Query query = session.getNamedQuery("findAllMedicoLegajos");
+        List<Integer> legajos = query.list();
+
+        for (Integer legajo : legajos) {
+            System.out.println(legajo);
+        }
+
+        session.getTransaction().commit();
+        ch.cerrarSession();
+    }
 
 }

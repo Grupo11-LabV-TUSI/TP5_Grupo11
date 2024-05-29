@@ -52,7 +52,7 @@ public class App {
 		listaPaciente.add(new Paciente(987654, "Martín", "López", "martinLopez@gmail.com", "87654321",
 				LocalDate.of(1993, 7, 12), "Avenida 7", "Salta", "Salta"));
 		listaPaciente.add(new Paciente(564738, "Julieta", "Fernández", "julietaFernandez@gmail.com", "65432187",
-				LocalDate.of(1988, 11, 5), "Calle 8", "Santa Fe", "Santa Fe"));
+				LocalDate.of(1988	, 11, 5), "Calle 8", "Santa Fe", "Santa Fe"));
 		listaPaciente.add(new Paciente(9645654, "Pedro", "Rodríguez", "pedroRodriguez@gmail.com", "36985214",
 				LocalDate.of(2002, 2, 28), "Avenida 9", "Neuquén", "Neuquén"));
 		
