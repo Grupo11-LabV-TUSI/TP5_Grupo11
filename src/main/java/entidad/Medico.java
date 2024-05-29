@@ -28,7 +28,11 @@ import javax.persistence.Table;
 	@NamedQuery(
 			name = "findAllMedicosOrderByMatricula",
 			query = "FROM Medico m ORDER BY m.matricula ASC"
-		)
+		),
+	@NamedQuery(
+	        name = "findAllMedicoLegajos",
+	        query = "SELECT m.matricula FROM Medico m"
+	    )
 })
 
 @Entity
