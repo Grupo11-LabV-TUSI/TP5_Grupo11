@@ -31,7 +31,14 @@ public class App {
 	public static void main(String[] args) {
 	
 		
-	
+		
+		
+		Paciente pac = new Paciente();
+		DaoHibernatePaciente dhp = new DaoHibernatePaciente ();
+		dhp.borrar(pac);
+		
+		/*
+		
 		// CARGAR //
 		// Turno turno = new Turno(medico, paciente, LocalDate.of(2028, 5, 14),
 		// LocalTime.of(18, 0), "Bien", EstadoTurno.PENDIENTE);
@@ -101,7 +108,7 @@ public class App {
 		for (int i = 0; i < listaEspecialidad.size(); i++) {
 			try {
 				// crear
-				listaEspecialidad.get(i).setId((long) (i + 1));
+				listaEspecialidad.get(i).setId((int) (i + 1));
 				DaoHibernateEspecialidad.crear(listaEspecialidad.get(i));
 				// leer
 				System.out.println(DaoHibernateEspecialidad.leer(listaEspecialidad.get(i).getId()));
@@ -266,7 +273,7 @@ public class App {
 			}
 		}
 		// listar
-		System.out.println(DaoHibernateTurno.leerTodos());
+		//System.out.println(DaoHibernateTurno.leerTodos());
 
 		// BORRAR //
 		// Turno //
@@ -302,7 +309,7 @@ public class App {
 		//DaoHibernateMedico aux = new DaoHibernateMedico();
 		 
 		 
-		
+		*/
 		
 		
 		 

@@ -28,7 +28,7 @@ public class DaoHibernateEspecialidad {
 		ch.cerrarSession();
 	}
 	// leer
-	public static Especialidad leer(Long id) {
+	public static Especialidad leer(int id) {
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
 		
@@ -80,7 +80,7 @@ public class DaoHibernateEspecialidad {
 		return lista;
 	}
 	// existe
-	public static boolean existe(Long id) {
+	public static boolean existe(int id) {
 		boolean existe = false;
 		
 		if(leer(id) != null) {

@@ -151,7 +151,7 @@ public class DaoHibernateMedico {
 		ch.cerrarSession();
 	}
 
-	public static void listarPorMatriculaDESC() {
+	public static void listarPorMatricula() {
 
 		System.err.println("Listar medicos ordenados por matricula");
 		List<Medico> lm = DaoHibernateMedico.leerOrdenadosMatricula();
@@ -167,7 +167,7 @@ public class DaoHibernateMedico {
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
 
-		Long maximo = (Long) session.createQuery("SELECT MAX(med.id) FROM Medico med").uniqueResult();
+		int maximo =  (Integer) session.createQuery("SELECT MAX(med.id) FROM Medico med").uniqueResult();
 		System.out.println("El Maximo ID es: " + maximo);
 
 		ch.cerrarSession();
